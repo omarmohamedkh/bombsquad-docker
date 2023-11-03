@@ -7,7 +7,7 @@ ARG BUILDPLATFORM
 ENV LANG en_US.utf8
 
 RUN sed -e 's/^#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' -i /etc/locale.gen && locale-gen
-RUN pacman -Sy --needed --noconfirm python glibc-locales sdl2 wget tmux
+RUN pacman -Sy --needed --noconfirm python wget tmux
 
 WORKDIR /app
 
@@ -16,7 +16,7 @@ RUN if [[ "${TARGETPLATFORM}" = "amd64" ]]; then \
     elif [[ "${TARGETPLATFORM}" = "arm64" ]]; then \
     wget https://files.ballistica.net/bombsquad/builds/old/BombSquad_Server_Linux_Arm64_${BOMBSQUAD_VERSION}.tar.gz -O- | tar -xzvf - ; \
     else \
-    echo "${TARGETPLATFORM}}" >&2; \
+    echo "${TARGETPLATFORM} is not supported" >&2; exit 255; \
     fi; \
     mv BombSquad_Server*/ bombsquad-server
 
