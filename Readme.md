@@ -1,8 +1,6 @@
 ## Dockerized BombSquad Server
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/alibo/bombsquad?style=flat-square)](https://hub.docker.com/r/omrmohamed/bombsquad)
-
-An unofficial docker image for server app of [BombSquad Game](https://www.froemling.net/apps/bombsquad)
+An unofficial docker image for [BombSquad](https://www.froemling.net/apps/bombsquad) server
 
 The server is running in tmux session to easily control the server
 
@@ -23,5 +21,4 @@ You can use **config.yaml** in this repo.
 
 
 ### Dockerhub
-
-See: https://hub.docker.com/r/alibo/bombsquad
+See: [Docker Image](https://hub.docker.com/repository/docker/omrmohamed/bombsquad)
